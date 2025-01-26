@@ -23,11 +23,11 @@ import Instagram from "../assets/instagram.svg";
                 <h2>Redes Sociales</h2>
                 <span>
                     <WhatsApp size="22" fill="white" />
-                    <a href="https://wa.me/56956194591">+56 9 5619 4591</a>
+                    <a href="https://wa.me/56956194591" class="hover-underline-animation">+56 9 5619 4591</a>
                 </span>
                 <span>
                     <Instagram size="25" fill="white" />
-                    <a href="https://www.instagram.com/club_jiko_no_kansei/">@club_jiko_no_kansei
+                    <a href="https://www.instagram.com/club_jiko_no_kansei/" class="hover-underline-animation">@club_jiko_no_kansei
                     </a>
                 </span>
             </div>
@@ -42,6 +42,7 @@ import Instagram from "../assets/instagram.svg";
         align-items: center;
         justify-content: center;
         gap: 2rem;
+        padding: 1rem;
     }
 
     .container-info {
@@ -86,6 +87,28 @@ import Instagram from "../assets/instagram.svg";
 
     a:hover {
         color: #f0f0f0;
+    }
+    .hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    }
+
+    .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #fe0000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+    }
+
+    .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
     }
 
     #map { height: 180px; }
