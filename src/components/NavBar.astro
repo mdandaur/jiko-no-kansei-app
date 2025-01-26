@@ -1,0 +1,75 @@
+---
+import logo from '../assets/logo-judo.png';
+import { Image } from 'astro:assets';
+---
+
+<div class="container">
+    <div class="hero">
+        <div class="links">
+            <a class="hover-underline-animation" href="#">Inicio</a>
+            <a class="hover-underline-animation" href="#programas">Programas</a>
+            <Image src={logo} alt="logo" loading="eager" width="150" height="150" />
+            <a class="hover-underline-animation" href="#horarios">Horarios</a>
+            <a class="hover-underline-animation" href="#contacto">Contacto</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        justify-content: center;
+    }
+
+    .hero {
+        display: flex;
+        align-items: center;
+
+    }
+
+    .links {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    a :hover {
+        color: #f0f0f0;
+        underline: 
+    }
+    
+/* source: https://www.30secondsofcode.org/css/s/hover-underline-animation/ */
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fe0000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+</style>
