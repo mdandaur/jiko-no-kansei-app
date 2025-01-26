@@ -1,0 +1,141 @@
+---
+import Program1 from '../assets/program1.jpg';
+import Program2 from '../assets/program2.jpg';
+import Program3 from '../assets/program3.jpg';
+
+import { Image } from 'astro:assets';
+
+---
+
+<div class="container" id="programas">
+    <h1>Programas</h1>
+    <div class="container-info">
+        <div class="program1">
+            <div class="info">
+                <h1>Judo Intermedio/Avanzado</h1>
+                <h2>Horarios: Lunes, Miércoles y Viernes de 19:00 a 21:00 hrs.</h2>
+                <p>Para judokas con cinturón amarillo y superior, este programa se enfoca en la competencia y la mejora continua de la técnica.</p>
+            </div>
+            <div class="img">
+                <Image src={Program1} alt="Judo Intermedio/Avanzado" loading="eager" width="350" height="350" />
+            </div>
+        </div>
+        <div class="program2">
+            <div class="img">
+                <Image src={Program2} alt="Judo Iniciantes" loading="lazy" width="350" height="350"  />
+            </div>
+            <div class="info">
+                <h1>Judo Iniciantes</h1>
+                <h2>Horarios: Martes y Jueves de 19:00 a 21:00 hrs.</h2>
+                <p>Para judokas sin experiencia previa, este programa se enfoca en la enseñanza de las técnicas básicas del judo.</p>
+            </div>
+        </div>
+        <div class="program3">
+            <div class="info">
+                <h1>Nage No Kata</h1>
+                <h2>Horarios: Sábados de 10:00 a 12:00 hrs.</h2>
+                <p>Para judokas con cinturón amarillo y superior, este programa se enfoca en el aprendizaje y perfeccionamiento del Nage No Kata.</p>
+            </div>
+            <div class="img">
+                <Image src={Program3} alt="Nage No Kata" loading="lazy" width="350" height="350" />
+            </div>
+    </div>
+</div>
+
+<style>
+    .container {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        justify-self: center;
+    }
+
+    .container-info {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        max-width: 1200px;
+    }
+
+    .program1, .program2, .program3 {
+        display: flex;
+        flex-direction: row;
+        gap: 4rem;
+        justify-content: space-evenly;
+    }
+
+    .program1, .program3 {
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 350px;
+    }
+
+    img {
+        width: 350px;
+        height: 350px;
+        object-fit: cover; 
+        margin: -10px;
+        transition: transform 0.2s ease-in-out;
+
+    }
+
+    .img {
+        background-color: red;
+        width: 350px;
+        height: 350px;
+    }
+
+    img:hover {
+        transform: scale(0.97);
+    }
+
+
+    h1 {
+        font-size: 2rem;
+        text-shadow: 3px 3px  red;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: #f0f0f0e1;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            
+        }
+
+        .container-info {
+            padding: 1rem;
+            flex-direction: column;
+            align-items: center;    
+        }
+        .program1, .program3 {
+            flex-direction: column;
+            align-items: center;    
+            justify-content: center;
+        }
+        .program2 {
+            flex-direction: column-reverse;
+        }
+    }
+
+</style>
