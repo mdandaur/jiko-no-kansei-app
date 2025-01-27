@@ -12,8 +12,26 @@
       border: 0;
       background: none;
     }
-    .sun { fill: black; }
-    .moon { fill: transparent; }
+    .sun { fill: black;
+      display: inline-block;
+      position: relative;
+      transition: transform 0.4s ease-in-out;
+      transform-origin: center;
+
+     }
+    .moon { fill: transparent;
+      display: inline-block;
+      position: relative; 
+      transition: transform 0.4s ease-in-out;
+      transform-origin: center;
+    }
+
+
+
+svg:hover .sun, svg:hover .moon {
+  transform: rotate(360deg);
+}
+
   
     :global(.dark) .sun { fill: transparent; }
     :global(.dark) .moon { fill: white; }

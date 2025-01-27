@@ -7,7 +7,6 @@
 
       .cls-2 {
         stroke: #1d1d1b;
-        fill: white;
         stroke-miterlimit: 10;
         stroke-width: 1.42px;
       }

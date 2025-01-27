@@ -22,11 +22,11 @@ import Instagram from "../assets/instagram.svg";
             <div class="info">
                 <h2>Redes Sociales</h2>
                 <span>
-                    <WhatsApp size="22" fill="white" />
+                    <WhatsApp size="22" fill="currentColor" />
                     <a href="https://wa.me/56956194591" class="hover-underline-animation">+56 9 5619 4591</a>
                 </span>
                 <span>
-                    <Instagram size="25" fill="white" />
+                    <Instagram size="25" fill="currentColor"  />
                     <a href="https://www.instagram.com/club_jiko_no_kansei/" class="hover-underline-animation">@club_jiko_no_kansei
                     </a>
                 </span>
@@ -67,8 +67,10 @@ import Instagram from "../assets/instagram.svg";
 
     h1 {
         font-size: 2rem;
-        text-shadow: 3px 3px  red;
+    }
 
+    html.dark h1{
+        text-shadow: 3px 3px  red;
     }
 
     h2 {
@@ -80,13 +82,13 @@ import Instagram from "../assets/instagram.svg";
     }
 
     a {
-        color: white;
+        color: inherit;
         text-decoration: none;
         font-size: 1rem;
     }
 
     a:hover {
-        color: #f0f0f0;
+        color: inherit;
     }
     .hover-underline-animation {
     display: inline-block;
