@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets";
+import Senseis from "./Senseis.astro";
+---
+
 <div class="container" id="nosotros">
     <div class="container-info">
         <div class="info">
@@ -8,6 +13,7 @@
             <img src="/img/about-us.jpg" alt="About Us">
         </div>
     </div>
+    <Senseis />
 </div>
 
 
@@ -16,5 +22,80 @@
     html.dark h1{
         text-shadow: 3px 3px  red;
     }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    .container-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .info-senseis {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+    
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .img img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+    }
+
+
+
+    .sensei {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .sensei img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+        .container-info {
+            flex-direction: column;
+        }
+        .info-senseis {
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .container-senseis {
+            flex-direction: column;
+        }
+    }
+
+
 
 </style>

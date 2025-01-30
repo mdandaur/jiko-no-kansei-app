@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import senseiPG from "../assets/senseiPG.webp";
+import senseiPM from "../assets/senseiPM.webp";
+import senseiCC from "../assets/senseiCC.webp";
+---
+
+<div class="container-info">
+    <h1>Nuestros Senseis</h1>
+    <div class="info-senseis">  
+        <div class="sensei">
+            <Image src={senseiPG} alt="Sensei Parra Gaete" width="200" height="200" />
+            <p>Sensei Parra Gaete</p>
+        </div>
+        <div class="sensei">
+            <Image src={senseiPM} alt="Sensei Parra Mendoza" width="200" height="200" />
+            <p>Sensei Parra Mendoza</p>
+        </div>
+        <div class="sensei">
+            <Image src={senseiCC} alt="Sensei Cesar Calistro" width="200" height="200" />
+            <p>Sensei Cesar Calistro</p>
+        </div>
+    </div>
+</div>
+
+<style>
+
+    html.dark h1{
+        text-shadow: 3px 3px  red;
+    }
+
+    .container-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .info-senseis {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+    
+    .sensei {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .sensei img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+
+
+
+</style>
