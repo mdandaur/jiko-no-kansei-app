@@ -24,35 +24,34 @@
 	@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Oswald:wght@200..700&display=swap');
 
 	* { 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-	body {
 		margin: 0;
-		align-items: center;
-		align-content: center;
-		display: flex;
-		flex-direction: column;
-		font-family: 'Oswald', sans-serif;
-		justify-content: center;
-		scroll-behavior: smooth;
-		width: auto;
-		min-height: 100vh;
+		padding: 0;
+		box-sizing: border-box;
 	}
 
+	html, body {
+		width: 100%;
+		min-width: 100vw; /* Ensure full viewport width */
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden; /* Prevent horizontal overflow */
+	}
 
+	body {
+		display: flex; /* Use flexbox for better alignment */
+		flex-direction: column; /* Stack child elements vertically */
+		align-items: center; /* Center content horizontally */
+		justify-content: center; /* Center content vertically */
+		font-family: 'Oswald', sans-serif;
+		scroll-behavior: smooth;
+		min-height: 100vh; /* Ensure full viewport height */
+		width: 100%;
+	}
 
 	body.dark, html.dark {
 		background-color: #000;
 		color: #fff;
 	}
-
-
-
-
-
 </style>
 
 <script is:inline>

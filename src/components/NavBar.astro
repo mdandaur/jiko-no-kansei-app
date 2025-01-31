@@ -4,33 +4,16 @@ import { Image } from 'astro:assets';
 import ThemeIcon from './ThemeIcon.astro';
 ---
 
-<div data-aos="fade-down" data-aos-delay="300"  class="container">
-        <nav class="nav-links">
-            <a class="hover-underline-animation" href="#">Inicio</a>
-            <a class="hover-underline-animation" href="#nosotros">Nosotros</a>
-            <Logo size="150" stroke="white" fill="black" />
-            <a class="hover-underline-animation" href="#programas">Programas</a>
-            <a class="hover-underline-animation" href="#contacto">Contacto</a>
-            <ThemeIcon/>
-        </nav>
-</div>
+<nav class="nav-links" data-aos="fade-down" data-aos-delay="300" >
+    <a class="hover-underline-animation" href="#">Inicio</a>
+    <a class="hover-underline-animation" href="#nosotros">Nosotros</a>
+    <Logo size="150" stroke="white" fill="black" />
+    <a class="hover-underline-animation" href="#programas">Programas</a>
+    <a class="hover-underline-animation" href="#contacto">Contacto</a>
+    <ThemeIcon/>
+</nav>
 
 <style>
-    .container {
-        display: flex;
-        /*
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: #000;
-        */
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
-        justify-content: center;
-        font-size: 1.2rem;
-    }
-
     .hero {
         display: flex;
         align-items: center;
@@ -42,7 +25,8 @@ import ThemeIcon from './ThemeIcon.astro';
         gap: 1rem;
         align-items: center;
         justify-content: center;
-        justify-content: space-between;
+        padding: 1rem;
+        font-size: 1.2rem;
     }
 
 

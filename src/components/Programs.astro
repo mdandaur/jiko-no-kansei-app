@@ -5,7 +5,7 @@ import Program3 from '../assets/program3.jpg';
 import { Image } from 'astro:assets';
 ---
 
-<section class="container" id="programas">
+<article class="container" id="programas">
     <h1>Programas</h1>
     <div class="container-info">
         <div data-aos="fade-left" data-aos-delay="200" data-aos-easing="ease-in-out" class="program1">
@@ -38,7 +38,7 @@ import { Image } from 'astro:assets';
                 <Image src={Program3} alt="Nage No Kata" loading="eager" width="350" height="350" />
             </div>
     </div>
-</section>
+</article>
 
 <style>
     .container {
@@ -49,13 +49,13 @@ import { Image } from 'astro:assets';
         justify-content: center;
         gap: 2rem;
         justify-self: center;
+        width: 100%;
     }
 
     .container-info {
         display: flex;
         flex-direction: column;
         gap: 3rem;
-        max-width: 1200px;
     }
 
     .program1, .program2, .program3 {
@@ -65,14 +65,12 @@ import { Image } from 'astro:assets';
         justify-content: space-evenly;
     }
 
-    .program1, .program3 {
-    }
 
     .info {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        max-width: 350px;
+        width: 300px; 
     }
 
     img {
@@ -127,33 +125,40 @@ import { Image } from 'astro:assets';
 
 
     @media (max-width: 768px) {
-        
+
+ 
+
         h1 {
-            font-size: 0;
+            font-size: 1.5rem;
         }
 
         h2 {
-            font-size: 0;
+            font-size: 1rem;
         }
 
         p {
-            font-size: 0;
+            font-size: 1rem;
         }
+        
 
         img {
-            width: 10px;
-            height: 10px;
+            width: 270px;
+            height: 270px;
         }
 
         .img {
-            width: 10px;
-            height: 10px;
+            width: 270px;
+            height: 270px;
         }
 
 
         img:hover {
         transform: none;
-    }
+        }
+
+        .info {
+            max-width: 260px;
+        }
 
         .container-info {
             padding: 1rem;

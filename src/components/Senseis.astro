@@ -7,22 +7,28 @@ import senseiCC from "../assets/senseiCC.webp";
 
 <div class="container-info">
     <h1>Nuestros Senseis</h1>
-    <div class="info-background">
-    <div class="info-senseis">
+    <div class="info-background" data-aos="fade-up" data-aos-delay="200" data-aos-easing="ease-in-out">
+    <div class="info-senseis" >
     
         <div class="sensei">
-            <Image src={senseiPG} alt="Sensei Parra Gaete" width="200" height="200" loading={"eager"} />
-            <h2>Sensei Parra Gaete</h2>
+            <div class="img">
+                <Image src={senseiPG} alt="Sensei Parra G." width="200" height="200" loading={"eager"} />
+            </div>
+            <h2>Sensei Parra G.</h2>
             <p>Grado</p>
         </div>
         <div class="sensei">
-            <Image src={senseiPM} alt="Sensei Parra Montero" width="200" height="200" loading={"eager"} />
-            <h2>Sensei Parra Montero</h2>
+            <div class="img">
+                <Image src={senseiPM} alt="Sensei Parra M." width="200" height="200" loading={"eager"} />
+            </div>
+            <h2>Sensei Parra M.</h2>
             <p>Grado</p>
         </div>
         <div class="sensei">
-            <Image src={senseiCC} alt="Sensei Cesar Calistro" width="200" height="200" loading={"eager"} />
-            <h2>Sensei Cesar Calistro</h2>
+            <div class="img">
+                <Image src={senseiCC} alt="Sensei Calistro A." width="200" height="200" loading={"eager"} />
+            </div>
+            <h2>Sensei Calistro A.</h2>
             <p>Grado</p>
         </div>
     </div>  
@@ -61,7 +67,7 @@ import senseiCC from "../assets/senseiCC.webp";
         background-color: white;
         margin-top: -20px;
         margin-left: -20px;
-        padding: 30px;
+        padding: 20px;
         background-color: white;
         border: 1px solid black;
 
@@ -77,13 +83,28 @@ import senseiCC from "../assets/senseiCC.webp";
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 1rem;
+    }
+
+    .img { /* [1.1] Set it as per your need */
+        overflow: hidden;
+        border-radius: 50%;
     }
 
     .sensei img {
         width: 200px;
         height: 200px;
         border-radius: 50%;
+        transition: transform .5s ease;
+
+    }
+
+    .sensei:hover img {
+        transform: scale(1.2);
+        opacity: 0.9;
+    }
+
+    h2 {
+        font-size: 1.5rem;
     }
 
     p {

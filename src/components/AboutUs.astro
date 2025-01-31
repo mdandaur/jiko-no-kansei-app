@@ -3,18 +3,15 @@ import { Image } from "astro:assets";
 import Senseis from "./Senseis.astro";
 ---
 
-<div class="container" id="nosotros">
+<article class="container" id="nosotros">
     <div class="container-info">
         <div class="info">
             <h1>¿Quiénes somos?</h1>
             <p>Somos una organización sin fines de lucro que busca ayudar a los niños y niñas de la comunidad de San Juan de Lurigancho a través de la educación y el deporte.</p>
         </div>
-        <div class="img">
-            
-        </div>
     </div>
     <Senseis />
-</div>
+</article>
 
 
 <style>
@@ -39,13 +36,6 @@ import Senseis from "./Senseis.astro";
         gap: 2rem;
     }
 
-    .info-senseis {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-    }
     
     .info {
         display: flex;
@@ -63,20 +53,6 @@ import Senseis from "./Senseis.astro";
 
 
 
-    .sensei {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    .sensei img {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-    }
-
     p {
         font-size: 1.5rem;
     }
@@ -85,17 +61,8 @@ import Senseis from "./Senseis.astro";
         .container-info {
             flex-direction: column;
         }
-        .info-senseis {
-            flex-direction: column;
-        }
-    }
 
-    @media (max-width: 768px) {
-        .container-senseis {
-            flex-direction: column;
-        }
     }
-
 
 
 </style>
