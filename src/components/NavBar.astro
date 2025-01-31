@@ -5,17 +5,14 @@ import ThemeIcon from './ThemeIcon.astro';
 ---
 
 <div data-aos="fade-down" data-aos-delay="300"  class="container">
-    <div class="hero">
-        <div class="links">
+        <nav class="nav-links">
             <a class="hover-underline-animation" href="#">Inicio</a>
             <a class="hover-underline-animation" href="#nosotros">Nosotros</a>
             <Logo size="150" stroke="white" fill="black" />
             <a class="hover-underline-animation" href="#programas">Programas</a>
             <a class="hover-underline-animation" href="#contacto">Contacto</a>
             <ThemeIcon/>
-
-        </div>
-    </div>
+        </nav>
 </div>
 
 <style>
@@ -40,13 +37,15 @@ import ThemeIcon from './ThemeIcon.astro';
 
     }
 
-    .links {
+    .nav-links {
         display: flex;
         gap: 1rem;
         align-items: center;
         justify-content: center;
         justify-content: space-between;
     }
+
+
 
     a {
         color: inherit;
@@ -67,6 +66,16 @@ import ThemeIcon from './ThemeIcon.astro';
 
     svg:hover {
         transform: scale(1.05);
+    }
+
+    @media screen and (max-width: 768px) {
+
+
+        .nav-links a {
+            display: none;
+        }
+        
+        
     }
     
 /* source: https://www.30secondsofcode.org/css/s/hover-underline-animation/ */

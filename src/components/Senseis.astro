@@ -7,19 +7,25 @@ import senseiCC from "../assets/senseiCC.webp";
 
 <div class="container-info">
     <h1>Nuestros Senseis</h1>
-    <div class="info-senseis">  
+    <div class="info-background">
+    <div class="info-senseis">
+    
         <div class="sensei">
             <Image src={senseiPG} alt="Sensei Parra Gaete" width="200" height="200" loading={"eager"} />
-            <p>Sensei Parra Gaete</p>
+            <h2>Sensei Parra Gaete</h2>
+            <p>Grado</p>
         </div>
         <div class="sensei">
-            <Image src={senseiPM} alt="Sensei Parra Mendoza" width="200" height="200" loading={"eager"} />
-            <p>Sensei Parra Mendoza</p>
+            <Image src={senseiPM} alt="Sensei Parra Montero" width="200" height="200" loading={"eager"} />
+            <h2>Sensei Parra Montero</h2>
+            <p>Grado</p>
         </div>
         <div class="sensei">
             <Image src={senseiCC} alt="Sensei Cesar Calistro" width="200" height="200" loading={"eager"} />
-            <p>Sensei Cesar Calistro</p>
+            <h2>Sensei Cesar Calistro</h2>
+            <p>Grado</p>
         </div>
+    </div>  
     </div>
 </div>
 
@@ -27,6 +33,15 @@ import senseiCC from "../assets/senseiCC.webp";
 
     html.dark h1{
         text-shadow: 3px 3px  red;
+    }
+
+    html.dark .info-background {
+        background-color: red;
+    }
+
+    html.dark .info-senseis {
+        border: 1px solid red;
+        background-color: black;
     }
 
     .container-info {
@@ -43,6 +58,18 @@ import senseiCC from "../assets/senseiCC.webp";
         align-items: center;
         justify-content: center;
         gap: 2rem;
+        background-color: white;
+        margin-top: -20px;
+        margin-left: -20px;
+        padding: 30px;
+        background-color: white;
+        border: 1px solid black;
+
+    }
+
+    .info-background {
+         background-color: black;
+            padding: 10px;         
     }
     
     .sensei {
@@ -57,6 +84,23 @@ import senseiCC from "../assets/senseiCC.webp";
         width: 200px;
         height: 200px;
         border-radius: 50%;
+    }
+
+    p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+
+
+        .info-senseis {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
     }
 
 
