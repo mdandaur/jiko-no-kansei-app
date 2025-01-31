@@ -5,7 +5,7 @@ import Program3 from '../assets/program3.jpg';
 import { Image } from 'astro:assets';
 ---
 
-<div class="container" id="programas">
+<section class="container" id="programas">
     <h1>Programas</h1>
     <div class="container-info">
         <div data-aos="fade-left" data-aos-delay="200" data-aos-easing="ease-in-out" class="program1">
@@ -15,12 +15,12 @@ import { Image } from 'astro:assets';
                 <p>Para judokas con cinturón amarillo y superior, este programa se enfoca en la competencia y la mejora continua de la técnica.</p>
             </div>
             <div class="img">
-                <Image src={Program1} alt="Judo Intermedio/Avanzado" loading="lazy" width="350" height="350" />
+                <Image src={Program1} alt="Judo Intermedio/Avanzado" loading="eager" width="350" height="350" />
             </div>
         </div>
         <div data-aos="fade-right" data-aos-delay="200" data-aos-easing="ease-in-out" class="program2">
             <div class="img">
-                <Image src={Program2} alt="Judo Iniciantes" loading="lazy" width="350" height="350"  />
+                <Image src={Program2} alt="Judo Iniciantes" loading="eager" width="350" height="350"  />
             </div>
             <div class="info">
                 <h1>Judo Iniciantes</h1>
@@ -35,10 +35,10 @@ import { Image } from 'astro:assets';
                 <p>Para judokas con cinturón amarillo y superior, este programa se enfoca en el aprendizaje y perfeccionamiento del Nage No Kata.</p>
             </div>
             <div class="img">
-                <Image src={Program3} alt="Nage No Kata" loading="lazy" width="350" height="350" />
+                <Image src={Program3} alt="Nage No Kata" loading="eager" width="350" height="350" />
             </div>
     </div>
-</div>
+</section>
 
 <style>
     .container {
@@ -81,27 +81,31 @@ import { Image } from 'astro:assets';
         object-fit: cover; 
         margin: -10px;
         transition: transform 0.2s ease-in-out;
-
+        transform-origin: center center;
     }
 
     .img {
         background-color: black;
         width: 350px;
         height: 350px;
-    }
-
-    html.dark .img{
-        background-color: red;
+        
     }
 
     img:hover {
         transform: scale(0.97);
     }
 
+    html.dark .img{
+        background-color: red;
+    }
+
+
+
 
     h1 {
         font-size: 2rem;
         color: black;
+        
 
     }
 
@@ -123,9 +127,33 @@ import { Image } from 'astro:assets';
 
 
     @media (max-width: 768px) {
-        .container {
-            
+        
+        h1 {
+            font-size: 0;
         }
+
+        h2 {
+            font-size: 0;
+        }
+
+        p {
+            font-size: 0;
+        }
+
+        img {
+            width: 10px;
+            height: 10px;
+        }
+
+        .img {
+            width: 10px;
+            height: 10px;
+        }
+
+
+        img:hover {
+        transform: none;
+    }
 
         .container-info {
             padding: 1rem;
