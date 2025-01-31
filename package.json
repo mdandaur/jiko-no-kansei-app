@@ -12,6 +12,7 @@
     "@astrojs/sitemap": "^3.2.1",
     "@fontsource/oswald": "^5.1.1",
     "@fontsource/twinkle-star": "^5.1.1",
+    "aos": "^2.3.4",
     "astro": "^5.1.9",
     "leaflet": "^1.9.4"
   }
