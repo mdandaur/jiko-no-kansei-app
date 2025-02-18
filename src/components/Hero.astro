@@ -1,12 +1,12 @@
 ---
 import { getImage } from "astro:assets"
-import hero from "../assets/hero.webp"
+import heroImg from "../assets/hero.webp"
 import RightArrow from "../assets/right-arrow.svg"
 import { hero } from "../data/content.json"
 
 ---
 
-<article class="container" id="hero" style={`background-image: linear-gradient(white,black), url(${hero});`}>
+<article class="container" id="hero" style={`background-image: linear-gradient(white,black), url(${heroImg});`}>
 
     <div class="container-info">
         <h1>{hero.title}</h1>
