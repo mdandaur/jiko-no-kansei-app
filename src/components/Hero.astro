@@ -1,0 +1,172 @@
+---
+import { getImage } from "astro:assets"
+import hero from "../assets/hero.webp"
+import RightArrow from "../assets/right-arrow.svg"
+const backgroundImg = await getImage({src: hero})
+---
+
+<article class="container" id="hero" >
+
+    <div class="container-info">
+        <h1>Título</h1>
+        <h2>Subtitulo</h2>
+        <p>Texto</p>
+        <div class="button-background">
+            <a href="https://wa.me/56956194591" class="button">
+                <span>
+                    <h3>¡Súmate!</h3>
+                    <p>La primera clase es gratis</p>
+                </span>
+                <RightArrow size="25" fill="currentColor" class="right-arrow" />
+            </a>
+        </div>
+
+    </div>
+<!--
+    <div class="info-background">
+        <div class="info">
+            <h1>Jiko no Kansei</h1>
+            <span class="quote">
+                <p>"Búsqueda de la perfección como persona para tener buena salud, inteligencia y buen carácter"</p>
+                <span class="author">
+                    <p>- Jigoro Kano -</p>
+                    <p>Fundador del Judo</p>
+                </span>
+            </span>
+        </div>
+    </div>
+    <div class="button-background">
+        <a href="https://wa.me/56956194591" class="button">
+            <span>
+                <p>¡Súmate!</p>
+                <p>La primera clase es gratis</p>
+            </span>
+        </a>
+    </div>
+-->
+</article>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100%;
+        padding: 2rem;
+        background-image: linear-gradient(white,black), url(../assets/hero.webp);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-blend-mode: saturation;
+    }
+
+    .container-info {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: left;
+        gap: 2rem;
+        padding: 2rem;
+        border-radius: 10px;
+    }
+
+    .button-background {
+        background-color: black;
+        padding: 10px; 
+        width: 250px;
+             
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 20px;
+        margin-top: -20px; 
+        margin-left: -20px;
+        background-color: red;
+        border: 1px solid black;
+        border-radius: 0;
+        color: white;
+        font-size: 1.5rem;
+        text-decoration: none;
+        transition: transform 0.2s ease-in-out;
+    } 
+
+    .button:hover {
+        transform: scale(1.05);
+        background-color: rgb(218, 3, 3);
+    }
+
+    .button p, .button h1, .button h2, .button h3 {
+        text-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .button span {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: left;
+        text-wrap: balance;
+    }
+
+
+    .right-arrow {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .button:hover .right-arrow {
+        transform: translateX(10px);
+    }
+    
+    h1 {
+        font-size: 3rem;
+        text-shadow: 3px 3px  white;
+        
+    }
+
+    h2 {
+        font-size: 2rem;
+        text-shadow: 2px 2px  white;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+
+    }
+
+    p {
+        font-size: 1.5rem;
+        text-shadow: 1.5px 1.5px  white;
+    }
+
+
+
+
+    html.dark h1{
+        text-shadow: 3px 3px  red;
+    }
+
+    html.dark h2{
+        text-shadow: 2px 2px  red;
+    }
+    
+    html.dark p{
+        text-shadow: 1.5px 1.5px  red;
+    }
+
+    @media screen and (max-width: 768px) {
+        .container{
+            margin-top: 130px;
+        }
+        .info-background {
+            width: 80vw;
+        }
+        
+    }

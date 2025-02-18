@@ -14,19 +14,22 @@ import ThemeIcon from './ThemeIcon.astro';
 </nav>
 
 <style>
-    .hero {
-        display: flex;
-        align-items: center;
-
-    }
-
     .nav-links {
+        position: fixed;
+        top: 0;
         display: flex;
         gap: 1rem;
         align-items: center;
         justify-content: center;
         padding: 1rem;
         font-size: 1.2rem;
+        background-color: white;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    html.dark .nav-links {
+        background-color: black;
     }
 
 
