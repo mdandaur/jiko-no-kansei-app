@@ -1,9 +1,14 @@
 ---
 import { programs } from '../data/content.json';
 import { Image } from 'astro:assets';
+import program1 from '../assets/program1.jpg';
+import program2 from '../assets/program2.jpg';
+import program3 from '../assets/program3.jpg';
+
+const programImages = [program1, program2, program3];
 
 // Función para formatear los horarios de los programas
-// Hecho con ayuda de ChatGPT, ralentiza mucho el renderizado
+// Hecho con ayuda de ChatGPT, quizás puede ralentizar el renderizado
 // Así que se está utilizando un archivo JSON con los horarios ya formateados en scheduleText
 // Se puede ver el archivo en src/data/content.json
 // Para usar esto cambiar programs por formattedPrograms en el map de abajo en container-info
@@ -45,7 +50,7 @@ const formattedPrograms = programs.map(program => ({
                     <p>{program.description}</p>
                 </div>
                 <div class="img">
-                    <Image src={program.image} alt={program.name} loading="lazy" width="350" height="350" />
+                    <Image src={programImages[key]} alt={program.name} loading="lazy" width="350" height="350" />
                 </div>
             </div>
         ))}

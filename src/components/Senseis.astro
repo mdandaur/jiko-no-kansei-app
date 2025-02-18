@@ -1,16 +1,20 @@
 ---
 import { Image } from "astro:assets";
 import { senseis } from "../data/content.json";
+import senseiPG from "../assets/senseiPG.webp";
+import senseiPM from "../assets/senseiPM.webp";
+import senseiCC from "../assets/senseiCC.webp";
+const senseiImages = [senseiPG, senseiPM, senseiCC];
 ---
 
 <div class="container-info">
     <h1>Nuestros Senseis</h1>
     <div class="info-background" data-aos="fade-up" data-aos-delay="200" data-aos-easing="ease-in-out">
     <div class="info-senseis" >
-        {senseis.map((sensei) => (
+        {senseis.map((sensei, key) => (
             <div class="sensei">
                 <div class="img">
-                    <Image src={sensei.image} alt={sensei.name} width="200" height="200" loading={"lazy"} />
+                    <Image src={senseiImages[key]} alt={sensei.name} width="200" height="200" loading={"lazy"} />
                 </div>
                 <h2>{sensei.name}</h2>
                 <p>{sensei.grade}</p>
