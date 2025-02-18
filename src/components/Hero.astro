@@ -1,9 +1,9 @@
 ---
 import { getImage } from "astro:assets"
-import heroImg from "../assets/hero.webp"
+import heroImg from "../assets/hero.jpg"
 import RightArrow from "../assets/right-arrow.svg"
 import { hero } from "../data/content.json"
-const optimizedHeroImg = await getImage({src: heroImg})
+const optimizedHeroImg = await getImage({src: heroImg, loading: "eager", format: "webp"})
 ---
 
 <article class="container" id="hero" style={`background-image: linear-gradient(white,black), url(${heroImg.src})`}>
