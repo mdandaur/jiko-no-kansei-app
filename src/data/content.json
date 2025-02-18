@@ -1,0 +1,118 @@
+{
+    "hero": {
+        "title": "Lorem Ipsum",
+        "subtitle": "Neque porro quisquam est qui dolorem ipsum quia dolor",
+        "text": "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...",
+        "button": {
+            "title": "¡Súmate!",
+            "text": "La primera clase es gratuita"
+        },
+        "image": "/src/assets/hero.webp"
+    },
+
+    "contacts": {
+        "address": {
+            "street": "Av. Vicuña Mackenna 4860, Macul",
+            "city": "Santiago",
+            "country": "Chile"
+        },
+        "socialNetworks": {
+            "whatsapp": {
+                "name": "Whatsapp",
+                "url": "https://wa.me/56956194591",
+                "phone": "+56 9 5619 4591"
+            },
+            "instagram": {
+                "name": "Instagram",
+                "url": "https://www.instagram.com/club_jiko_no_kansei/",
+                "instagramName": "@club_jiko_no_kansei"
+            }
+        }
+    },
+
+    "senseis": [
+        {
+            "name": "Sensei Parra G.",
+            "description": "vacío",
+            "image": "/src/assets/senseiPG.webp",
+            "grade": "2° Dan"
+        },
+        {
+            "name": "Sensei Parra M.",
+            "description": "vacío",
+            "image": "/src/assets/senseiPM.webp",
+            "grade": "5° Dan"
+        },
+        {
+            "name": "Sensei Calistro A.",
+            "description": "vacío",
+            "image": "/src/assets/senseiCC.webp",
+            "grade": "4° Dan"
+        }
+    ],
+
+    "programs": [
+        {
+            "name": "Judo Intermedio/Avanzado",
+            "description": "Para judokas con cinturón amarillo y superior, este programa se enfoca en la competencia y la mejora continua de la técnica.",
+            "image": "/src/assets/program1.jpg",
+            "schedule": {
+                "Lunes": [
+                    {
+                        "start": "19:00",
+                        "end": "20:30"
+                    }
+                ],
+                "Miércoles": [
+                    {
+                        "start": "19:00",
+                        "end": "20:30"
+                    }
+                ],
+                "Viernes": [
+                    {
+                        "start": "19:00",
+                        "end": "20:30"
+                    }
+                ]
+            },
+            "scheduleText": "Lunes, Miércoles, Viernes de 19:00 a 20:30"
+        },
+        {
+            "name": "Judo Iniciantes",
+            "description": "Para judokas sin experiencia previa, este programa se enfoca en la enseñanza de las técnicas básicas del judo.",
+            "image": "/src/assets/program2.jpg",
+            "schedule": {
+                "Martes": [
+                    {
+                        "start": "19:00",
+                        "end": "20:30"
+                    }
+                ],
+                "Jueves": [
+                    {
+                        "start": "19:00",
+                        "end": "20:30"
+                    }
+                ]
+            },
+            "scheduleText": "Martes, Jueves de 19:00 a 20:30"
+        },
+        {
+            "name": "Nage No Kata",
+            "description": "Para judokas con cinturón amarillo y superior, este programa se enfoca en el aprendizaje y perfeccionamiento del Nage No Kata.",
+            "image": "/src/assets/program3.jpg",
+            "schedule": {
+                "Sábado": [
+                    {
+                        "start": "10:00",
+                        "end": "12:00"
+                    }
+                ]
+            },
+            "scheduleText": "Sábado de 10:00 a 12:00"
+        }
+    ]
+
+
+}

@@ -1,21 +1,22 @@
 ---
 import { getImage } from "astro:assets"
-import hero from "../assets/hero.webp"
+//import hero from "../assets/hero.webp"
 import RightArrow from "../assets/right-arrow.svg"
-const backgroundImg = await getImage({src: hero})
+import { hero } from "../data/content.json"
+
 ---
 
-<article class="container" id="hero" >
+<article class="container" id="hero" style={`background-image: linear-gradient(white,black), url(${hero.image});`}>
 
     <div class="container-info">
-        <h1>Título</h1>
-        <h2>Subtitulo</h2>
-        <p>Texto</p>
+        <h1>{hero.title}</h1>
+        <h2>{hero.subtitle}</h2>
+        <p>{hero.text}</p>
         <div class="button-background">
             <a href="https://wa.me/56956194591" class="button">
                 <span>
-                    <h3>¡Súmate!</h3>
-                    <p>La primera clase es gratis</p>
+                    <h3>{hero.button.title}</h3>
+                    <p>{hero.button.text}</p>
                 </span>
                 <RightArrow size="25" fill="currentColor" class="right-arrow" />
             </a>
@@ -35,14 +36,6 @@ const backgroundImg = await getImage({src: hero})
             </span>
         </div>
     </div>
-    <div class="button-background">
-        <a href="https://wa.me/56956194591" class="button">
-            <span>
-                <p>¡Súmate!</p>
-                <p>La primera clase es gratis</p>
-            </span>
-        </a>
-    </div>
 -->
 </article>
 
@@ -55,7 +48,8 @@ const backgroundImg = await getImage({src: hero})
         height: 100vh;
         width: 100%;
         padding: 2rem;
-        background-image: linear-gradient(white,black), url(../assets/hero.webp);
+        color: white;
+        text-shadow: 3px 3px red;
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -67,10 +61,12 @@ const backgroundImg = await getImage({src: hero})
         width: 100%;
         flex-direction: column;
         align-items: center;
-        justify-content: left;
+        justify-content: center;
+        text-align: left;
         gap: 2rem;
         padding: 2rem;
         border-radius: 10px;
+        width: 95%;
     }
 
     .button-background {
@@ -127,13 +123,13 @@ const backgroundImg = await getImage({src: hero})
     
     h1 {
         font-size: 3rem;
-        text-shadow: 3px 3px  white;
+        text-shadow: 3px 3px  red;
         
     }
 
     h2 {
         font-size: 2rem;
-        text-shadow: 2px 2px  white;
+        text-shadow: 2px 2px  black;
     }
 
     h3 {
@@ -143,30 +139,18 @@ const backgroundImg = await getImage({src: hero})
 
     p {
         font-size: 1.5rem;
-        text-shadow: 1.5px 1.5px  white;
-    }
-
-
-
-
-    html.dark h1{
-        text-shadow: 3px 3px  red;
-    }
-
-    html.dark h2{
-        text-shadow: 2px 2px  red;
-    }
-    
-    html.dark p{
-        text-shadow: 1.5px 1.5px  red;
+        text-shadow: 1.5px 1.5px  black;
     }
 
     @media screen and (max-width: 768px) {
         .container{
             margin-top: 130px;
         }
-        .info-background {
-            width: 80vw;
+
+
+        .container-info h1, .container-info h2, .container-info p {
+            margin-top: 0;
+            margin-bottom: 0;
         }
         
     }

@@ -1,42 +1,54 @@
 ---
-import Program1 from '../assets/program1.jpg';
-import Program2 from '../assets/program2.jpg';
-import Program3 from '../assets/program3.jpg';
+import { programs } from '../data/content.json';
 import { Image } from 'astro:assets';
+
+// Función para formatear los horarios de los programas
+// Hecho con ayuda de ChatGPT, ralentiza mucho el renderizado
+// Así que se está utilizando un archivo JSON con los horarios ya formateados en scheduleText
+// Se puede ver el archivo en src/data/content.json
+// Para usar esto cambiar programs por formattedPrograms en el map de abajo en container-info
+/* function formatSchedule(schedule) {
+    const groupedSchedule = {};
+    // Group days by their time ranges
+    for (const [day, times] of Object.entries(schedule)) {
+        const timeRange = times.map(time => `${time.start} a ${time.end}`).join(", ");
+        if (!groupedSchedule[timeRange]) {
+            groupedSchedule[timeRange] = [];
+        }
+        groupedSchedule[timeRange].push(day);
+    }
+
+    // Format the grouped schedule into a readable string
+    return Object.entries(groupedSchedule).map(([timeRange, days]) => {
+        const daysString = days.join(", ");
+        return `${daysString} de ${timeRange}`;
+    }).join(", ");
+}
+
+const formattedPrograms = programs.map(program => ({
+    ...program,
+    formattedSchedule: formatSchedule(program.schedule)
+}));
+    */
+
+
 ---
 
 <article class="container" id="programas">
     <h1>Programas</h1>
     <div class="container-info">
-        <div data-aos="fade-left" data-aos-delay="200" data-aos-easing="ease-in-out" class="program1">
-            <div class="info">
-                <h1>Judo Intermedio/Avanzado</h1>
-                <h2>Horarios: Lunes, Miércoles y Viernes de 19:00 a 21:00 hrs.</h2>
-                <p>Para judokas con cinturón amarillo y superior, este programa se enfoca en la competencia y la mejora continua de la técnica.</p>
+        {programs.map((program, key) => (
+            <div data-aos="fade-left" data-aos-delay="200" data-aos-easing="ease-in-out" class={`program${key + 1}`}>
+                <div class="info">
+                    <h1>{program.name}</h1>
+                    <h2>Horarios: {program.scheduleText}</h2>
+                    <p>{program.description}</p>
+                </div>
+                <div class="img">
+                    <Image src={program.image} alt={program.name} loading="lazy" width="350" height="350" />
+                </div>
             </div>
-            <div class="img">
-                <Image src={Program1} alt="Judo Intermedio/Avanzado" loading="eager" width="350" height="350" />
-            </div>
-        </div>
-        <div data-aos="fade-right" data-aos-delay="200" data-aos-easing="ease-in-out" class="program2">
-            <div class="img">
-                <Image src={Program2} alt="Judo Iniciantes" loading="eager" width="350" height="350"  />
-            </div>
-            <div class="info">
-                <h1>Judo Iniciantes</h1>
-                <h2>Horarios: Martes y Jueves de 19:00 a 21:00 hrs.</h2>
-                <p>Para judokas sin experiencia previa, este programa se enfoca en la enseñanza de las técnicas básicas del judo.</p>
-            </div>
-        </div>
-        <div data-aos="fade-left" data-aos-delay="200" data-aos-easing="ease-in-out" class="program3">
-            <div class="info">
-                <h1>Nage No Kata</h1>
-                <h2>Horarios: Sábados de 10:00 a 12:00 hrs.</h2>
-                <p>Para judokas con cinturón amarillo y superior, este programa se enfoca en el aprendizaje y perfeccionamiento del Nage No Kata.</p>
-            </div>
-            <div class="img">
-                <Image src={Program3} alt="Nage No Kata" loading="eager" width="350" height="350" />
-            </div>
+        ))}
     </div>
 </article>
 
@@ -63,6 +75,10 @@ import { Image } from 'astro:assets';
         flex-direction: row;
         gap: 4rem;
         justify-content: space-evenly;
+    }
+
+    .program2 {
+        flex-direction: row-reverse;
     }
 
 
@@ -164,14 +180,12 @@ import { Image } from 'astro:assets';
             flex-direction: column;
             align-items: center;    
         }
-        .program1, .program3 {
+        .program1, .program3, .program2 {
             flex-direction: column;
             align-items: center;    
             justify-content: center;
         }
-        .program2 {
-            flex-direction: column-reverse;
-        }
+
     }
 
 </style>

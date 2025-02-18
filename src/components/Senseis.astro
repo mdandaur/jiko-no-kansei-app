@@ -1,36 +1,21 @@
 ---
 import { Image } from "astro:assets";
-import senseiPG from "../assets/senseiPG.webp";
-import senseiPM from "../assets/senseiPM.webp";
-import senseiCC from "../assets/senseiCC.webp";
+import { senseis } from "../data/content.json";
 ---
 
 <div class="container-info">
     <h1>Nuestros Senseis</h1>
     <div class="info-background" data-aos="fade-up" data-aos-delay="200" data-aos-easing="ease-in-out">
     <div class="info-senseis" >
-    
-        <div class="sensei">
-            <div class="img">
-                <Image src={senseiPG} alt="Sensei Parra G." width="200" height="200" loading={"eager"} />
+        {senseis.map((sensei) => (
+            <div class="sensei">
+                <div class="img">
+                    <Image src={sensei.image} alt={sensei.name} width="200" height="200" loading={"lazy"} />
+                </div>
+                <h2>{sensei.name}</h2>
+                <p>{sensei.grade}</p>
             </div>
-            <h2>Sensei Parra G.</h2>
-            <p>Grado</p>
-        </div>
-        <div class="sensei">
-            <div class="img">
-                <Image src={senseiPM} alt="Sensei Parra M." width="200" height="200" loading={"eager"} />
-            </div>
-            <h2>Sensei Parra M.</h2>
-            <p>Grado</p>
-        </div>
-        <div class="sensei">
-            <div class="img">
-                <Image src={senseiCC} alt="Sensei Calistro A." width="200" height="200" loading={"eager"} />
-            </div>
-            <h2>Sensei Calistro A.</h2>
-            <p>Grado</p>
-        </div>
+        ))}
     </div>  
     </div>
 </div>

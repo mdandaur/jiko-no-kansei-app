@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 import ThemeIcon from './ThemeIcon.astro';
 ---
 
-<nav class="nav-links" data-aos="fade-down" data-aos-delay="300" >
+<nav class="nav-links" data-aos="fade-down" data-aos-delay="300" id="navbar">
     <a class="hover-underline-animation" href="#">Inicio</a>
     <a class="hover-underline-animation" href="#nosotros">Nosotros</a>
     <Logo size="150" stroke="white" fill="black" />
@@ -14,7 +14,7 @@ import ThemeIcon from './ThemeIcon.astro';
 </nav>
 
 <style>
-    .nav-links {
+    #navbar {
         position: fixed;
         top: 0;
         display: flex;
@@ -26,9 +26,10 @@ import ThemeIcon from './ThemeIcon.astro';
         background-color: white;
         width: 100%;
         z-index: 1000;
+        transition: top 0.3s;
     }
 
-    html.dark .nav-links {
+    html.dark #navbar {
         background-color: black;
     }
 
@@ -58,7 +59,7 @@ import ThemeIcon from './ThemeIcon.astro';
     @media screen and (max-width: 768px) {
 
 
-        .nav-links a {
+        #navbar a {
             display: none;
         }
         
@@ -91,3 +92,37 @@ import ThemeIcon from './ThemeIcon.astro';
 }
 
 </style>
+
+<script>
+    // fuente https://www.youtube.com/watch?v=_IRSvzxmRj8&ab_channel=OnlineTutorials
+    // y mejorada con Copilot Github, poco esfuerzo aquí de mi parte :D
+    let lastScrollTop = 0; // This variable will store the top position
+    const navbar = document.getElementById('navbar');
+    let ticking = false;
+    
+    function handleScroll() {
+      let scrollTop = window.scrollY || document.documentElement.scrollTop;
+      // This line will get the location on scroll
+    
+      if (scrollTop > lastScrollTop) { // if it will be greater than the previous
+        if (navbar) {
+          navbar.style.top = '-182px';
+        }
+        // set the value to the negative of height of navbar 
+      } else {
+        if (navbar) {
+          navbar.style.top = '0';
+        }
+      }
+    
+      lastScrollTop = scrollTop; // New position stored
+      ticking = false;
+    }
+    
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(handleScroll);
+        ticking = true;
+      }
+    });
+    </script>

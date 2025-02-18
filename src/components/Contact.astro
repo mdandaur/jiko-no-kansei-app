@@ -1,6 +1,7 @@
 ---
 import WhatsApp from "../assets/whatsapp.svg";
 import Instagram from "../assets/instagram.svg";
+import { programs, contacts } from '../data/content.json';
 ---
 
 <article class="container" id="contacto">
@@ -8,19 +9,20 @@ import Instagram from "../assets/instagram.svg";
         <div class="container-info">
             <div class="info">
                 <h2>Ubicación</h2>
-                <p>Av. Vicuña Mackenna 4860, Macul</p>
-                <p>Santiago, Chile</p>
+                <p>{contacts.address.street}</p>
+                <p>{`${contacts.address.city}, ${contacts.address.country}`}</p>
             </div>
             <div class="info">
                 <h2>Horarios</h2>
-                <p>Lunes, Miércoles y Viernes de 19:00 a 20:30hrs</p>
-                <p>Martes y Jueves de 19:00 a 20:30hrs</p>
+                {programs.map((program, key) => (
+                    <p key={key}>{program.scheduleText}</p>
+                ))}
             </div>
             <div class="info">
                 <h2>Redes Sociales</h2>
                 <span>
                     <WhatsApp size="22" fill="currentColor" />
-                    <a href="https://wa.me/56956194591" class="hover-underline-animation">+56 9 5619 4591</a>
+                    <a href={contacts.socialNetworks.whatsapp.url} class="hover-underline-animation">{contacts.socialNetworks.whatsapp.phone}</a>
                 </span>
                 <span>
                     <Instagram size="25" fill="currentColor"  />
