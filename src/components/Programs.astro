@@ -43,7 +43,7 @@ const formattedPrograms = programs.map(program => ({
     <h1>Programas</h1>
     <div class="container-info">
         {programs.map((program, key) => (
-            <div data-aos="fade-left" data-aos-delay="200" data-aos-easing="ease-in-out" class={`program${key + 1}`}>
+            <div data-aos={key % 2 === 0 ? "fade-left" : "fade-right"} data-aos-delay="200" data-aos-easing="ease-in-out" class={`program${key + 1}`}>
                 <div class="info">
                     <h1>{program.name}</h1>
                     <h2>Horarios: {program.scheduleText}</h2>
