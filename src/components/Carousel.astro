@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets';
+import carousel1 from '../assets/carousel/carousel1.jpg';
+import carousel2 from '../assets/carousel/carousel2.jpg';
+import carousel3 from '../assets/carousel/carousel3.jpg';
+import carousel4 from '../assets/carousel/carousel4.jpg';
+import carousel5 from '../assets/carousel/carousel5.jpg';
+import carousel6 from '../assets/carousel/carousel6.jpg';
+
+const images = [carousel1, carousel2, carousel3, carousel4, carousel5, carousel6];
+---
+
+
+<section class="carousel">
+    {images.map((image) => (
+        <Image src={image} alt="imagen del club"/>
+    ))}
+</section>
+
+<style>
+    .carousel {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        background-color: white;
+        box-shadow: 10px 10px black;
+    }
+
+    html.dark img {
+        background-color: black;
+        box-shadow: none;
+    }
+
+    @media (max-width: 768px) {
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+
+
+</style>

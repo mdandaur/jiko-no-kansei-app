@@ -1,9 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import Senseis from "./Senseis.astro";
+import Carousel from "./Carousel.astro";
+
 ---
 
 <article class="container" id="nosotros">
+    <Carousel />
     <div class="container-info">
         <div class="info">
             <h1>¿Quiénes somos?</h1>
@@ -11,6 +14,7 @@ import Senseis from "./Senseis.astro";
         </div>
     </div>
     <Senseis />
+
 </article>
 
 
