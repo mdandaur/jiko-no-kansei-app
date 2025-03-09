@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import Senseis from "./Senseis.astro";
 import Carousel from "./Carousel.astro";
+import { aboutUs } from "../data/content.json";
 
 ---
 
@@ -10,7 +11,7 @@ import Carousel from "./Carousel.astro";
     <div class="container-info">
         <div class="info">
             <h1>¿Quiénes somos?</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin vel sapien congue vehicula. Nam rhoncus neque non ante finibus pellentesque. Proin tempus interdum metus sed mattis. Morbi et metus rutrum, lobortis nisi eget, euismod eros. Praesent quis consectetur felis. Donec maximus purus lorem. Aliquam aliquet turpis arcu, non egestas orci pulvinar sit amet.</p>
+            <p>{aboutUs.text}</p>
         </div>
     </div>
     <Senseis />
@@ -61,7 +62,15 @@ import Carousel from "./Carousel.astro";
 
 
     p {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        font-weight: 300;
+        opacity: 0.9;
+        line-height: 1.5;
+        text-align: left;
+        text-wrap: pretty;
+        white-space: pre-wrap;
+
+
     }
 
     @media (max-width: 768px) {

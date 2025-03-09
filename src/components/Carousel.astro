@@ -1,4 +1,5 @@
 ---
+import Arrow from '../assets/arrow-icon.svg';
 import { Image } from 'astro:assets';
 import carousel1 from '../assets/carousel/carousel1.jpg';
 import carousel2 from '../assets/carousel/carousel2.jpg';
@@ -7,29 +8,195 @@ import carousel4 from '../assets/carousel/carousel4.jpg';
 import carousel5 from '../assets/carousel/carousel5.jpg';
 import carousel6 from '../assets/carousel/carousel6.jpg';
 
+
 const images = [carousel1, carousel2, carousel3, carousel4, carousel5, carousel6];
 ---
 
 
 <section class="carousel">
-    {images.map((image) => (
-        <Image src={image} alt="imagen del club"/>
-    ))}
+    <div class="carousel-slider">
+        <Arrow size="30"  id="btnPrev" fill="black" class="arrow" />
+        <div class="carousel-images">
+            {images.map((image, i) => (
+                <Image src={image} alt="imagen del club" loading="lazy" class={i === 0 ? "slide active" : "slide"} data-index={i} /> 
+            ))}
+        </div>
+        <Arrow size="30" id="btnNext" fill="black" class="arrow" stroke-width="4" stroke="black" />
+    </div>
+    <div class="carousel-dots">
+        {images.map((_, i) => (
+            <span class={i === 0 ? "dot active" : "dot"} data-index={i} ></span>
+        ))}
+    </div> 
 </section>
+
+<script>
+    const carouselImages = document.querySelector('.carousel-images');
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+    let index = 0;
+
+    function slideNext() {
+        index++;
+        if (index > slides.length - 1) {
+            index = 0;
+        }
+        slides.item(index).scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
+    function slidePrev() {
+        index--;
+        if (index < 0) {
+            index = slides.length - 1;
+        }
+        slides.item(index).scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
+    btnNext.addEventListener('click', slideNext);
+    btnPrev.addEventListener('click', slidePrev);
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            index = i;
+            slides.item(index).scrollIntoView({
+                behavior: 'smooth',
+                inline: 'center',
+                block: 'center' 
+            });
+        });
+    });
+
+    carouselImages.addEventListener('scroll', () => {
+        const scroll = carouselImages.scrollLeft;
+        const width = carouselImages.clientWidth;
+        const slideIndex = Math.round(scroll  / (width*0.8));    
+        index = slideIndex;
+
+        slides.forEach((slide, i) => {
+            if (i == index) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+
+        dots.forEach((dot, i) => {
+            if (i == index) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    });
+</script>
 
 <style>
     .carousel {
         display: flex;
-        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+    } 
+
+    .carousel-slider {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center; 
+        gap: 1rem;
+    }
+
+    .carousel-images {
+        display: flex;
+        justify-content: left;
+        align-items: center;   
+        width: 550px;
         gap: 1rem;
         padding: 1rem;
+        overflow-x: scroll;
+        scroll-snap-align: start;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
-    img {
-        width: 300px;
-        height: 300px;
+
+    .carousel-images::-webkit-scrollbar {
+        display: none;
+    }
+
+    .arrow {
+        cursor: pointer;
+        filter: drop-shadow(3px 3px red);
+        stroke-width: 4;
+        stroke: black;
+        transition: all 0.1s;
+        will-change: filter;
+    }
+
+    .arrow#btnPrev {
+        transform: scaleX(-1); 
+        filter: drop-shadow(-3px 3px red);
+    }
+
+    .arrow#btnPrev:hover{
+        transform:scaleX(-1) translateY(2px); 
+
+        filter:drop-shadow(-1px 1px red);
+    }
+
+    .arrow:hover{ 
+        transform: translateY(2px);
+        filter: drop-shadow(1px 1px red);
+
+    }
+
+    .carousel-dots {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        gap: 1rem;
+
+    }
+
+    .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: rgb(121, 121, 121);
+        cursor: pointer;
+    }
+
+    .dot.active {
+        background-color: red;
+    }
+
+    html.dark .dot.active {
+        background-color: white;
+    }
+
+
+
+    .slide {
+        width: 500px;
+        height: 500px;
         object-fit: cover;
         background-color: white;
         box-shadow: 10px 10px black;
+        filter: grayscale(100%);
+        scroll-snap-align: start;
+    }
+
+    .slide.active {
+        filter: none;
     }
 
     html.dark img {
@@ -37,18 +204,31 @@ const images = [carousel1, carousel2, carousel3, carousel4, carousel5, carousel6
         box-shadow: none;
     }
 
+    img:hover {
+        filter: none;
+    }
+
     @media (max-width: 768px) {
-        img {
-            width: 200px;
-            height: 200px;
+        .slide {
+            width: 80%;
+            height: 80%;
         }
     }
 
     @media (max-width: 480px) {
-        img {
-            width: 150px;
-            height: 150px;
+        .carousel-images {
+            width: 100%;
         }
+
+        .slide {
+            width: 200px;
+            height: 200px;
+        }
+
+        .arrow {
+            display: none;
+        }
+
     }
 
 

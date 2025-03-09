@@ -7,7 +7,7 @@ import ThemeIcon from './ThemeIcon.astro';
 <nav class="nav-links" data-aos="fade-down" data-aos-delay="300" id="navbar">
     <a class="hover-underline-animation" href="#">Inicio</a>
     <a class="hover-underline-animation" href="#nosotros">Nosotros</a>
-    <Logo size="150" stroke="white" fill="black" />
+    <Logo size="150" stroke="white" fill="black" id="logo" /> 
     <a class="hover-underline-animation" href="#programas">Programas</a>
     <a class="hover-underline-animation" href="#contacto">Contacto</a>
     <ThemeIcon/>
@@ -27,6 +27,7 @@ import ThemeIcon from './ThemeIcon.astro';
         width: 100%;
         z-index: 1000;
         transition: top 0.3s;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     html.dark #navbar {
@@ -98,35 +99,36 @@ import ThemeIcon from './ThemeIcon.astro';
 </style>
 
 <script>
+
+    
     // fuente https://www.youtube.com/watch?v=_IRSvzxmRj8&ab_channel=OnlineTutorials
     // y mejorada con Copilot Github, poco esfuerzo aquí de mi parte :D
     let lastScrollTop = 0; // This variable will store the top position
     const navbar = document.getElementById('navbar');
-    let ticking = false;
+    const logo = document.getElementById('logo');
+    const navbarHeight = navbar.offsetHeight;
+    const logoHeight = logo.offsetHeight; 
+    const scrollSensitivity = 100;
+    let ticking = false; 
     
-    function handleScroll() {
-      let scrollTop = window.scrollY || document.documentElement.scrollTop;
-      // This line will get the location on scroll
-    
-      if (scrollTop > lastScrollTop) { // if it will be greater than the previous
-        if (navbar) {
-          navbar.style.top = '-182px';
-        }
-        // set the value to the negative of height of navbar 
-      } else {
-        if (navbar) {
-          navbar.style.top = '0';
-        }
+
+
+    function handleScroll(){
+
+      let currentScroll = window.scrollY || document.documentElement.scrollTop;
+
+      if (currentScroll < navbarHeight) {
+        logo.setAttribute('height', `${150 - currentScroll/2.5}`); 
       }
-    
-      lastScrollTop = scrollTop; // New position stored
-      ticking = false;
+      else {
+        logo.setAttribute('height', `${150 - navbarHeight/2.5}`); 
+      }
+
+
+
     }
     
     window.addEventListener('scroll', function() {
-      if (!ticking) {
         window.requestAnimationFrame(handleScroll);
-        ticking = true;
-      }
     });
     </script>
