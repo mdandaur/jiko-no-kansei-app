@@ -1,5 +1,6 @@
 ---
 import { programs } from '../data/content.json';
+import Belt from '../assets/belt.svg';
 import { Image } from 'astro:assets';
 import program1 from '../assets/program1.jpg';
 import program2 from '../assets/program2.jpg';
@@ -45,7 +46,8 @@ const formattedPrograms = programs.map(program => ({
         {programs.map((program, key) => (
             <div data-aos={key % 2 === 0 ? "fade-left" : "fade-right"} data-aos-delay="200" data-aos-easing="ease-in-out" class={`program${key + 1}`}>
                 <div class="info">
-                    <h1>{program.name}</h1>
+                    <h1>{program.name}</h1> 
+                    <Belt size="30" fill={program.beltColor} stroke="black" stroke-width={15} />
                     <h2>Horarios: {program.scheduleText}</h2>
                     <p>{program.description}</p>
                 </div>

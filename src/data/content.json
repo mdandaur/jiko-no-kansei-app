@@ -60,6 +60,7 @@
             "description": "Para judokas con cinturón amarillo y superior, este programa se enfoca en la competencia y la mejora continua de la técnica.",
             "image": "/src/assets/program1.jpg",
             "age": "16",
+            "beltColor": "yellow",
             "schedule": {
                 "Lunes": [
                     {
@@ -87,6 +88,7 @@
             "description": "Para judokas sin experiencia previa, este programa se enfoca en la enseñanza de las técnicas básicas del judo.",
             "image": "/src/assets/program2.jpg",
             "age": "6",
+            "beltColor": "white",
             "schedule": {
                 "Martes": [
                     {
@@ -108,6 +110,7 @@
             "description": "Para judokas con cinturón amarillo y superior, este programa se enfoca en el aprendizaje y perfeccionamiento del Nage No Kata.",
             "image": "/src/assets/program3.jpg",
             "age": "16",
+            "beltColor": "yellow",
             "schedule": {
                 "Sábado": [
                     {
