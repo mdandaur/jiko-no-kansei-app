@@ -192,8 +192,8 @@ const images = [carousel1, carousel2, carousel3, carousel4, carousel5, carousel6
 
 
     .slide {
-        width: 500px;
-        height: 500px;
+        width: 90%;
+        height: 90%;
         object-fit: cover;
         background-color: white;
         box-shadow: 10px 10px black;
@@ -214,21 +214,9 @@ const images = [carousel1, carousel2, carousel3, carousel4, carousel5, carousel6
         filter: none;
     }
 
-    @media (max-width: 768px) {
-        .slide {
-            width: 80%;
-            height: 80%;
-        }
-    }
-
     @media (max-width: 480px) {
         .carousel-images {
             width: 100%;
-        }
-
-        .slide {
-            width: 200px;
-            height: 200px;
         }
 
         .arrow {

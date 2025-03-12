@@ -9,9 +9,9 @@
         },
         "image": "/src/assets/hero.webp"
     },
-"aboutUs": {
-    "text": "Nacimos como un espacio creado por ex estudiantes y ex seleccionados de judo de la Pontificia Universidad Católica de Chile, y hoy somos un club independiente. Desde el inicio, nuestro propósito ha sido mantener viva la pasión por el judo y fomentar sus valores fundamentales.\n\nPromovemos la vida sana, la disciplina y el desarrollo integral de cada judoka. Nuestro compromiso es formar no solo atletas de excelencia, sino también personas íntegras que contribuyan a la sociedad.\n\nPonemos especial énfasis en el desarrollo físico y en la enseñanza del Go Kyo, el conjunto esencial de técnicas de judo. Con una orientación competitiva, buscamos que nuestros judokas se destaquen en el tatami, llevando consigo nuestros valores y técnicas.\n\nEn Jiko no Kansei, entendemos el judo como un camino de mejora continua, donde el esfuerzo y la dedicación forjan el carácter. Si compartes nuestra pasión, te invitamos a ser parte de esta historia de excelencia."
-},
+    "aboutUs": {
+        "text": "Nacimos como un espacio creado por ex estudiantes y ex seleccionados de judo de la Pontificia Universidad Católica de Chile, y hoy somos un club independiente. Desde el inicio, nuestro propósito ha sido mantener viva la pasión por el judo y fomentar sus valores fundamentales.\n\nPromovemos la vida sana, la disciplina y el desarrollo integral de cada judoka. Nuestro compromiso es formar no solo atletas de excelencia, sino también personas íntegras que contribuyan a la sociedad.\n\nPonemos especial énfasis en el desarrollo físico y en la enseñanza del Go Kyo, el conjunto esencial de técnicas de judo. Con una orientación competitiva, buscamos que nuestros judokas se destaquen en el tatami, llevando consigo nuestros valores y técnicas.\n\nEn Jiko no Kansei, entendemos el judo como un camino de mejora continua, donde el esfuerzo y la dedicación forjan el carácter. Si compartes nuestra pasión, te invitamos a ser parte de esta historia de excelencia."
+    },
 
     "contacts": {
         "address": {
@@ -22,8 +22,8 @@
         "socialNetworks": {
             "whatsapp": {
                 "name": "Whatsapp",
-                "url": "https://wa.me/56956194591",
-                "phone": "+56 9 5619 4591"
+                "url": "https://wa.me/56942262126",
+                "phone": "+56 9 4226 2126"
             },
             "instagram": {
                 "name": "Instagram",
@@ -61,6 +61,7 @@
             "image": "/src/assets/program1.jpg",
             "age": "16",
             "beltColor": "yellow",
+            "price": "43.000",
             "schedule": {
                 "Lunes": [
                     {
@@ -87,8 +88,9 @@
             "name": "Judo Iniciantes",
             "description": "Para judokas sin experiencia previa, este programa se enfoca en la enseñanza de las técnicas básicas del judo.",
             "image": "/src/assets/program2.jpg",
-            "age": "6",
+            "age": "16",
             "beltColor": "white",
+            "price":"35.000",
             "schedule": {
                 "Martes": [
                     {
@@ -111,6 +113,7 @@
             "image": "/src/assets/program3.jpg",
             "age": "16",
             "beltColor": "yellow",
+            "price": "30.000",
             "schedule": {
                 "Sábado": [
                     {

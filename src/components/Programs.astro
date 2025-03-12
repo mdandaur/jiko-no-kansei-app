@@ -47,9 +47,15 @@ const formattedPrograms = programs.map(program => ({
             <div data-aos={key % 2 === 0 ? "fade-left" : "fade-right"} data-aos-delay="200" data-aos-easing="ease-in-out" class={`program${key + 1}`}>
                 <div class="info">
                     <h1>{program.name}</h1> 
-                    <Belt size="30" fill={program.beltColor} stroke="black" stroke-width={15} />
                     <h2>Horarios: {program.scheduleText}</h2>
+                    <div style="display: flex; gap: 1rem; align-items: center; justify-content: start;"> 
+                        <Belt size="30" fill={program.beltColor} stroke="black" stroke-width={15} />
+                        <h3>{`≥${program.age} años`}</h3>
+                    </div>
                     <p>{program.description}</p>
+                    <div class="price">
+                        <p>{`\$ ${program.price}`}</p>
+                    </div>
                 </div>
                 <div class="img">
                     <Image src={programImages[key]} alt={program.name} loading="lazy" width="350" height="350" />
@@ -95,6 +101,11 @@ const formattedPrograms = programs.map(program => ({
         width: 300px; 
     }
 
+    .info h1, h2, p, div {
+        margin: 0;
+    }
+
+
     img {
         width: 350px;
         height: 350px;
@@ -123,10 +134,9 @@ const formattedPrograms = programs.map(program => ({
 
 
     h1 {
-        font-size: 2rem;
+        font-size: 1.7rem;
         color: black;
         
-
     }
 
     html.dark h1{
@@ -135,7 +145,7 @@ const formattedPrograms = programs.map(program => ({
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     p {
@@ -144,7 +154,19 @@ const formattedPrograms = programs.map(program => ({
         opacity: 0.9;
     }
 
+    .price {
+        background-color: red;
+        width: fit-content;
+        height: fit-content;  
+        margin-top: 10px;
+        color: white;
+        box-shadow: 5px 5px black;
+    }
 
+    .price p {
+        padding: 14px; 
+        margin: 0
+    }
 
     @media (max-width: 768px) {
 

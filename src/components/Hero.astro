@@ -3,7 +3,7 @@ import { getImage } from "astro:assets"
 import heroImg from "../assets/hero2.webp"
 import senseiImg from "../assets/senseiCC.webp"
 import RightArrow from "../assets/right-arrow.svg"
-import { hero } from "../data/content.json"
+import { hero, contacts } from "../data/content.json"
 ---
 
 <article class="container" id="hero" style={`background-image: linear-gradient(white,black), url(${heroImg.src})`}>
@@ -13,7 +13,7 @@ import { hero } from "../data/content.json"
         <h2>{hero.subtitle}</h2>
         <p>{hero.text}</p>
         <div class="button-background">
-            <a href="https://wa.me/56956194591" class="button">
+            <a href={contacts.socialNetworks.whatsapp.url} class="button">
                 <span>
                     <h3>{hero.button.title}</h3>
                     <p>{hero.button.text}</p>
