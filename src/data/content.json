@@ -94,18 +94,18 @@
             "schedule": {
                 "Martes": [
                     {
-                        "start": "19:00",
-                        "end": "20:30"
+                        "start": "18:30",
+                        "end": "20:00"
                     }
                 ],
                 "Jueves": [
                     {
-                        "start": "19:00",
-                        "end": "20:30"
+                        "start": "18:30",
+                        "end": "20:00"
                     }
                 ]
             },
-            "scheduleText": "Martes, Jueves de 19:00 a 20:30"
+            "scheduleText": "Martes, Jueves de 18:30 a 20:00"
         },
         {
             "name": "Nage No Kata",
