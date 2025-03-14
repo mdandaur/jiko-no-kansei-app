@@ -61,7 +61,7 @@
             "image": "/src/assets/program1.jpg",
             "age": "16",
             "beltColor": "yellow",
-            "price": "43.000",
+            "price": "43.000 /mes",
             "schedule": {
                 "Lunes": [
                     {
@@ -90,7 +90,7 @@
             "image": "/src/assets/program2.jpg",
             "age": "16",
             "beltColor": "white",
-            "price":"35.000",
+            "price":"33.000 /mes",
             "schedule": {
                 "Martes": [
                     {
@@ -113,7 +113,7 @@
             "image": "/src/assets/program3.jpg",
             "age": "16",
             "beltColor": "yellow",
-            "price": "30.000",
+            "price": "20.000 /mes",
             "schedule": {
                 "Sábado": [
                     {
