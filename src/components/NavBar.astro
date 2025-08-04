@@ -7,7 +7,7 @@ import ThemeIcon from './ThemeIcon.astro';
 <nav class="nav-links" data-aos="fade-down" data-aos-delay="300" id="navbar">
     <a class="hover-underline-animation" href="#">Inicio</a>
     <a class="hover-underline-animation" href="#nosotros">Nosotros</a>
-    <Logo size="150" stroke="white" fill="black" id="logo" /> 
+    <Logo size="100" stroke="white" fill="black" id="logo" /> 
     <a class="hover-underline-animation" href="#programas">Programas</a>
     <a class="hover-underline-animation" href="#contacto">Contacto</a>
     <ThemeIcon/>
@@ -59,12 +59,17 @@ import ThemeIcon from './ThemeIcon.astro';
 
     @media screen and (max-width: 768px) {
 
+        /*
         #navbar {
-            top: 43px !important;
             position: sticky;
+            justify-content: space-evenly;
         }
 
         #navbar a {
+            display: none;
+        }
+        */
+        #navbar {
             display: none;
         }
         

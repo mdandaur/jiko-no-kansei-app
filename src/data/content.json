@@ -1,6 +1,6 @@
 {
     "hero": {
-        "title": "Club Jiko no Kansei",
+        "title": "Club de Judo \n Jiko no Kansei",
         "subtitle": "\"Lo importante no es ser mejor que otros, sino ser mejor que ayer\"",
         "text": "- Jigoro Kano -",
         "button": {
@@ -27,8 +27,8 @@
             },
             "instagram": {
                 "name": "Instagram",
-                "url": "https://www.instagram.com/club_jiko_no_kansei/",
-                "instagramName": "@club_jiko_no_kansei"
+                "url": "https://www.instagram.com/clubjikonokansei/",
+                "instagramName": "@clubjikonokansei"
             }
         }
     },

@@ -22,6 +22,7 @@ import { hero, contacts } from "../data/content.json"
             </a>
         </div>
 
+
     </div>
 <!--
     <div class="info-background">
@@ -45,7 +46,6 @@ import { hero, contacts } from "../data/content.json"
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;
         width: 100%;
         padding: 2rem;
         color: white;
@@ -122,14 +122,17 @@ import { hero, contacts } from "../data/content.json"
     }
     
     h1 {
-        font-size: 3rem;
-        text-shadow: 3px 3px  red;
-        
+        font-size: 2.5rem;
+        text-shadow: 4px 4px  black;
+        text-wrap: balance;
+        text-align: center; 
     }
 
     h2 {
-        font-size: 2rem;
-        text-shadow: 2px 2px  black;
+        font-size: 1.7rem;
+        text-shadow: 2px 2px  red;
+        text-wrap: balance;
+        text-align: center; 
     }
 
     h3 {
@@ -143,9 +146,7 @@ import { hero, contacts } from "../data/content.json"
     }
 
     @media screen and (max-width: 768px) {
-        .container{
-            margin-top: 75px;
-        }
+ 
 
 
         .container-info h1, .container-info h2, .container-info p {
